@@ -2,7 +2,7 @@
 
 rm -f ./result.xls
 IFS=$'\n'
-printf "Название файла\tРасширение файла\tДата Изменения\tРазмер\tДлительность\tДлительность\n" >> result.xls
+printf "Название файла\tРасширение файла\tДата Изменения\tРазмер\tПуть\tДлительность\n" >> result.xls
 start=$(pwd)
 
 function file_size() {
