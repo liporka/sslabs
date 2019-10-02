@@ -7,8 +7,8 @@ start=$(pwd)
 
 function file_size() {
 	bytes=$(wc -c < $name)
-	let "kbytes = "$bytes" / 1024 /1024"
-	echo "$kbytes"
+	let "mbytes = "$bytes" / 1024 /1024"
+	echo "$mbytes"
 }
 
 function mainfnc() {
