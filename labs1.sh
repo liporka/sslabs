@@ -28,7 +28,7 @@ function mainfnc() {
 			file_size=$(file_size)
 			last_edited=$(date -r "$file" +%T" "%d/%m/%y)
  			if file -ib "$file" | grep -qE 'video|audio'; then
-			 	duration=$(ffmpeg -i $file 2>&1 | grep Duration | awk '{print $2}')	
+			 	duration=$(ffmpeg -i $file | grep Duration | awk '{print $2}')	
 		 	else	
 				duration="-"
 			fi
