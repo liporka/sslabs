@@ -24,7 +24,7 @@ function mainfnc() {
 		fi
 		if [[ -f "$file" ]]; then
 			name=$(basename "$file")
-			extension=${name#*.}
+			extension=${name##*.}
 			file_size=$(file_size)
 			last_edited=$(date -r "$file" +%T" "%d/%m/%y)
  			if file -ib "$file" | grep -qE 'video|audio'; then
@@ -34,7 +34,7 @@ function mainfnc() {
 			fi
  			filepath=$(pwd)
 		 	cd "${start}"
-			printf "${name%%.*}\t$extension\t$last_edited\t$file_size MB\t$filepath\t$duration\n" >> result.xls
+			printf "${name%.*}\t$extension\t$last_edited\t$file_size MB\t$filepath\t$duration\n" >> result.xls
 			cd "${filepath}"
 		fi
 	done
